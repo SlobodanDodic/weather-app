@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { DataProvider } from "./context/DataContext";
+import Topbar from "./components/Topbar";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import DailyView from "./pages/DailyView";
+// import FooterInfo from "./components/FooterInfo";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataProvider>
+      <Topbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/daily/:id" element={<DailyView />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {/* <FooterInfo /> */}
+    </DataProvider>
   );
 }
-
-export default App;
