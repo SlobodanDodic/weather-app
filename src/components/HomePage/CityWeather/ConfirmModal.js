@@ -7,10 +7,10 @@ export default function ConfirmModal({ hiddenConfirmation, setHiddenConfirmation
 
       <div className={hiddenConfirmation ? "hidden" : "absolute z-10 w-full"}>
 
-        <div className="absolute inset-0 bg-stone-900 bg-opacity-50 transition-opacity"></div>
+        <div className="absolute inset-0 bg-stone-900 bg-opacity-70 transition-opacity"></div>
 
         <div className="inset-0 z-10 overflow-scroll">
-          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div className="flex min-h-full items-end justify-center text-center sm:items-center">
             <div className="transform bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg rounded-lg">
 
               <div className="flex flex-row justify-center pt-5">
@@ -30,10 +30,10 @@ export default function ConfirmModal({ hiddenConfirmation, setHiddenConfirmation
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center bg-gray-100 px-4 py-3 rounded-lg">
-                <button onClick={setHiddenConfirmation} className="btn-primary bg-gray-600 hover:bg-gray-800 inline-flex text-white m-1">
+                <button onClick={setHiddenConfirmation} className="btn-primary bg-gray-600 hover:bg-gray-800 inline-flex justify-center text-white m-1">
                   Cancel
                 </button>
-                <button onClick={removeCity} className="btn-primary bg-red-700 hover:bg-red-800 inline-flex text-white m-1">
+                <button onClick={removeCity} className="btn-primary bg-red-700 hover:bg-red-800 inline-flex justify-center text-white m-1">
                   Remove
                 </button>
               </div>

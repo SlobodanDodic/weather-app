@@ -8,6 +8,8 @@ export default function CityDayEntry({ selectedCity }) {
   const { conversion } = useContext(DataContext);
   const alerts = selectedCity?.alerts?.alert;
 
+  // console.log(alerts)
+
   return (
     <div className="flex flex-col sm:flex-row justify-between">
       {selectedCity?.forecast?.forecastday?.map((day) => (
@@ -31,7 +33,7 @@ export default function CityDayEntry({ selectedCity }) {
           </Link>
 
           {alerts.length !== 0 &&
-            <div className="flex flex-row flex-1 justify-center border-1 border-white/50 mb-4 mx-1 p-1 bg-zinc-900/60 rounded">
+            <div className="flex flex-row flex-1 justify-center mt-2 bg-zinc-900/60 rounded">
               {alerts?.map((alert, index) => (
                 dayjs(day?.date).format("dddd, D MMM") === dayjs(alert?.effective).format("dddd, D MMM") &&
                 <CityDayAlert key={index} alert={alert} color='red' />
