@@ -1,30 +1,36 @@
 import { useContext } from "react";
 import DataContext from "../../../context/DataContext";
+import useToggle from "../../../hooks/useToggle";
 import { GiNightSky } from "react-icons/gi";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { BsSun } from "react-icons/bs";
-import LoadingInfo from "../../LoadingInfo";
 import dayjs from "dayjs";
+import ConfirmModal from "./ConfirmModal";
 
-export default function CityDayTitle({ selectedCity, loading, error }) {
-  const { clearStorage, cities } = useContext(DataContext);
+export default function CityDayTitle({ selectedCity }) {
+  const { setCities, cities } = useContext(DataContext);
+  const [hiddenConfirmation, setHiddenConfirmation] = useToggle(true)
 
-  console.log(cities)
-
-  if (loading) return <LoadingInfo />;
-  if (error) console.log(error);
+  const removeCity = () => {
+    setCities(cities.filter((c) => c !== selectedCity.location.name))
+    window.location.reload()
+  }
 
   return (
-    <div className="flex flex-col md:flex-row m-1 p-1 border-1 border-white/50 bg-zinc-900/60 rounded">
+    <div className="relative flex flex-col md:flex-row m-1 p-1 border-1 border-white/50 bg-zinc-900/60 rounded text-slate-200">
 
-      <div className="flex flex-1 items-center justify-center py-2">
+      <div className="flex flex-1 items-center justify-center py-2 font-bold tracking-wider">
         <p>{dayjs(selectedCity?.location?.localtime).format("dddd, D MMMM YYYY")}</p>
       </div>
 
-      <div className="flex flex-1 justify-center py-2 text-lg">
-        <p className="text-slate-300">{selectedCity?.location?.name}, {selectedCity?.location?.country}</p>
+      <div className="flex flex-1 justify-center py-2 uppercase font-bold tracking-widest subpixel-antialiased">
+        <div className="flex flex-col">
+          <p className='flex-row'>{selectedCity?.location?.name}</p>
+          <p className='flex-row'>{selectedCity?.location?.country}</p>
+        </div>
       </div>
 
-      <div className="flex flex-1 justify-center py-2">
+      <div className="flex flex-1 justify-center py-2 font-bold tracking-wider">
         {selectedCity?.current?.is_day ? (
           <div className="flex items-center">
             <p className="">{dayjs(selectedCity?.location?.localtime).format("h:mm A")}</p>
@@ -40,8 +46,9 @@ export default function CityDayTitle({ selectedCity, loading, error }) {
         )}
       </div>
 
-      <div className="flex basis-20 justify-center p-2">
-        <button onClick={clearStorage} className="btn-primary">Delete all</button>
+      <div className="flex basis-5 justify-center p-2">
+        <button onClick={setHiddenConfirmation}><RiDeleteBin5Line style={{ height: "1.25rem", width: "1.25rem", color: "darkred" }} /></button>
+        <ConfirmModal hiddenConfirmation={hiddenConfirmation} setHiddenConfirmation={setHiddenConfirmation} removeCity={removeCity} selectedCity={selectedCity} />
       </div>
     </div>
   );

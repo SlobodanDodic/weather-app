@@ -7,10 +7,10 @@ export default function CityDayAlert({ alert, color }) {
   const [hidden, setHidden] = useToggle(true)
 
   return (
-    <div className='m-2'>
+    <div className='m-2 relative'>
       <MdStorm onClick={setHidden} type="button" className="cursor-pointer" style={{ height: "1.25rem", width: "1.25rem", color: `${color}` }} />
 
-      <div className={hidden ? "hidden" : "relative z-10"}>
+      <div className={hidden ? "hidden" : "absolute z-10"}>
 
         <div className="fixed inset-0 bg-stone-900 bg-opacity-50 transition-opacity"></div>
 

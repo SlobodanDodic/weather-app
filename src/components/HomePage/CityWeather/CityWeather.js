@@ -9,9 +9,10 @@ export default function City({ city }) {
   const { data: selectedCity, loading, error } = useFetch(apiForecastUrl);
 
   if (loading) return <LoadingInfo />
+  if (error) console.log(error);
 
   return (
-    <div className="max-w-screen-lg mx-auto text-sm font-light my-3 p-3 border-1 border-white/50 bg-zinc-900/60 rounded">
+    <div className="max-w-screen-lg mx-auto text-sm font-light my-3 px-6 py-3">
       <CityDayTitle selectedCity={selectedCity} loading={loading} error={error} />
       <CityDayEntry selectedCity={selectedCity} loading={loading} error={error} />
     </div>
