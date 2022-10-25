@@ -33,7 +33,7 @@ export default function CityDayEntry({ selectedCity }) {
           </Link>
 
           {alerts.length !== 0 &&
-            <div className="flex flex-row flex-1 flex-wrap justify-center mt-2 bg-zinc-900/60 rounded">
+            <div className="flex flex-row flex-1 flex-wrap justify-center mt-2">
               {alerts?.map((alert, index) => (
                 dayjs(day?.date).format("dddd, D MMM") === dayjs(alert?.effective).format("dddd, D MMM") &&
                 <CityDayAlert key={index} alert={alert} color='red' />

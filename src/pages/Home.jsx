@@ -33,11 +33,14 @@ export default function Home() {
         </button>
       </div>
 
-      <Carousel className="mx-4 my-2 border-1 border-white/50 bg-zinc-900/60 rounded" showThumbs={false} autoFocus={true} useKeyboardArrows={true} infiniteLoop>
-        {cities?.map((city, index) => (
-          <CityWeather key={index} city={city} />
-        ))}
-      </Carousel>
+      <div className="max-w-screen-lg mx-auto mt-5 border-1 border-white/50 bg-zinc-900/60 rounded">
+        <Carousel showThumbs={false} autoFocus={true} useKeyboardArrows={true} infiniteLoop>
+          {cities?.map((city, index) => (
+            <CityWeather key={index} city={city} />
+          ))}
+        </Carousel>
+      </div>
+
 
       {/* <CurrentCityLink /> */}
 
