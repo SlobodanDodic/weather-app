@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { TiArrowBackOutline } from "react-icons/ti";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import CurrentCityLink from "../components/HomePage/CurrentCityLink";
 
 export default function Home() {
   const { cities, clearStorage } = useContext(DataContext);
@@ -37,6 +38,8 @@ export default function Home() {
           <CityWeather key={index} city={city} />
         ))}
       </Carousel>
+
+      {/* <CurrentCityLink /> */}
 
 
     </div>

@@ -8,7 +8,7 @@ export default function CityDayAlert({ alert, color }) {
 
   return (
     <div>
-      <div className="flex flex-wrap cursor-pointer mr-1 p-2">
+      <div className="cursor-pointer mr-1 p-2">
         <MdStorm onClick={setHidden} type="button" style={{ height: "1.25rem", width: "1.25rem", color: `${color}` }} />
       </div>
 

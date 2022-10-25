@@ -4,7 +4,7 @@ import LoadingInfo from "../../LoadingInfo";
 import { useFetch } from "../../../hooks/useFetch";
 const KEY = process.env.REACT_APP_API_KEY;
 
-export default function City({ city }) {
+export default function CityWeather({ city }) {
   const apiForecastUrl = `/forecast.json?key=${KEY}&q=${city}&days=5&aqi=yes&alerts=yes`;
   const { data: selectedCity, loading, error } = useFetch(apiForecastUrl);
 
