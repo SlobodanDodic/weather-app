@@ -9,8 +9,3 @@ export default function useToggle(defaultValue) {
 
   return [currentValue, toggleValue];
 }
-
-// Original implementation:
-// const handleConversion = () => {
-//   return setConversion(!conversion);
-// };

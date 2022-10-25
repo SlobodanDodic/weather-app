@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function LoadingInfo() {
   return (
     <button className="btn-primary my-10 flex items-center mx-auto">
@@ -9,7 +7,5 @@ export default function LoadingInfo() {
       </svg>
       Loading...
     </button>
-
-
   )
 }

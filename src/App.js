@@ -6,7 +6,6 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import DailyView from "./pages/DailyView";
-// import FooterInfo from "./components/FooterInfo";
 
 export default function App() {
   return (
@@ -18,7 +17,6 @@ export default function App() {
         <Route path="/daily/:id" element={<DailyView />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <FooterInfo /> */}
     </DataProvider>
   );
 }

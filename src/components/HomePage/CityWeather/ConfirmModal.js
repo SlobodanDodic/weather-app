@@ -23,12 +23,6 @@ export default function ConfirmModal({ hiddenConfirmation, setHiddenConfirmation
                 <p className="my-2 font-bold text-gray-600 tracking-wide text-center">Are you sure you want to remove {selectedCity?.location?.name}?</p>
               </div>
 
-              <div className="my-3 text-left sm:mt-0 sm:ml-4">
-                <div className="mt-2 text-justify text-gray-600">
-
-                </div>
-              </div>
-
               <div className="flex flex-col sm:flex-row justify-center bg-gray-100 px-4 py-3 rounded-lg">
                 <button onClick={setHiddenConfirmation} className="btn-primary bg-gray-600 hover:bg-gray-800 inline-flex justify-center text-white m-1">
                   Cancel

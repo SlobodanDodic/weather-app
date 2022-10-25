@@ -10,8 +10,6 @@ export default function Search() {
   const { city, setCity, cities, setCities } = useContext(DataContext);
   const [disabled, setDisabled] = useState(true)
   const navigate = useNavigate();
-  // Autocomplete state - typed charaters for search
-  // const [city, setCity] = useState(""); 
 
   const [showDropDown, setShowDropDown] = useState(false)
   const debouncedSearch = useDebounce(city, 500); // Delayed search 500ms
@@ -42,14 +40,13 @@ export default function Search() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/");
     addCity(city)
     setCity('')
+    navigate("/");
   };
 
   return (
     <div className="h-100h pb-44 flex flex-row justify-center items-end bg-search bg-no-repeat bg-cover bg-center bg-fixed bg-zinc-900/60 text-white/70 text-sm rounded-md">
-
       <div className="flex max-w-xs w-screen m-2">
         <form action="submit" className="w-full">
 
@@ -72,7 +69,6 @@ export default function Search() {
 
           <div className="flex flex-row">
             <input type="text" placeholder="Search for the city..." value={city} onChange={(e) => { setCity(e.target.value) }} className="flex flex-col basis-3/4 btn-primary rounded-none bg-zinc-900/60 hover:bg-zinc-900 capitalize" />
-
             <button disabled={disabled} onClick={handleSubmit} className={disabled ? "flex flex-col basis-1/4 btn-primary ml-2 rounded-none bg-zinc-900/60 hover:cursor-not-allowed hover:bg-zinc-900" : "flex flex-col basis-1/4 btn-primary ml-2 rounded-none bg-zinc-900/60 hover:cursor-pointer hover:bg-zinc-900"}>
               Add
             </button>
@@ -80,7 +76,6 @@ export default function Search() {
 
         </form>
       </div>
-
     </div >
   );
 }

@@ -8,8 +8,6 @@ export default function CityDayEntry({ selectedCity }) {
   const { conversion } = useContext(DataContext);
   const alerts = selectedCity?.alerts?.alert;
 
-  // console.log(alerts)
-
   return (
     <div className="flex flex-col sm:flex-row justify-between my-3 text-xs">
       {selectedCity?.forecast?.forecastday?.map((day) => (
