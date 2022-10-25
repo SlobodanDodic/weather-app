@@ -15,6 +15,7 @@ export default function Home() {
     clearStorage();
     window.location.reload();
   }
+
   return (
     <div className="min-h-screen bg-hero bg-no-repeat bg-cover bg-center bg-fixed text-white pt-24 px-2">
 
@@ -24,17 +25,14 @@ export default function Home() {
           Add city
         </Link>
 
-        <button
-          onClick={handleClearStorage}
-          className="flex flex-col sm:flex-row btn-primary"
-        >
+        <button onClick={handleClearStorage} className="flex flex-col sm:flex-row btn-primary">
           Clear all
           <TiArrowBackOutline style={{ width: "1rem", height: "1rem", marginLeft: "5px" }} />
         </button>
       </div>
 
-      <div className="max-w-screen-lg mx-auto mt-5 border-1 border-white/50 bg-zinc-900/60 rounded">
-        <Carousel showThumbs={false} autoFocus={true} useKeyboardArrows={true} infiniteLoop>
+      <div className="max-w-screen-lg mx-auto mt-5">
+        <Carousel className="border-1 border-white/50 bg-zinc-900/70 rounded" showThumbs={false} autoFocus={true} useKeyboardArrows={true} infiniteLoop>
           {cities?.map((city, index) => (
             <CityWeather key={index} city={city} />
           ))}

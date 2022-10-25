@@ -7,11 +7,11 @@ import useDebounce from "../hooks/useDebounce";
 const KEY = process.env.REACT_APP_API_KEY;
 
 export default function Search() {
-  const { cities, setCities } = useContext(DataContext);
+  const { city, setCity, cities, setCities } = useContext(DataContext);
   const [disabled, setDisabled] = useState(true)
   const navigate = useNavigate();
-
-  const [city, setCity] = useState(""); // Autocomplete state - typed charaters for search
+  // Autocomplete state - typed charaters for search
+  // const [city, setCity] = useState(""); 
 
   const [showDropDown, setShowDropDown] = useState(false)
   const debouncedSearch = useDebounce(city, 500); // Delayed search 500ms
@@ -44,6 +44,7 @@ export default function Search() {
     e.preventDefault();
     navigate("/");
     addCity(city)
+    setCity('')
   };
 
   return (

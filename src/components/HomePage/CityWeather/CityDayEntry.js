@@ -11,7 +11,7 @@ export default function CityDayEntry({ selectedCity }) {
   // console.log(alerts)
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between">
+    <div className="flex flex-col sm:flex-row justify-between my-3 text-xs">
       {selectedCity?.forecast?.forecastday?.map((day) => (
         <div key={day?.date_epoch} className="flex flex-col flex-1">
 
@@ -19,9 +19,9 @@ export default function CityDayEntry({ selectedCity }) {
             state={{ data: { day, selectedCity } }}
             className="flex flex-col flex-1 items-center border-1 border-white/50 m-1 p-1 bg-zinc-900/60 rounded">
 
-            <p className="py-1 border-b-1 border-l-yellow-100">{dayjs(day?.date).format("dddd, D MMM")}</p>
+            <p className="py-1 mb-1 border-b-1 border-b-zinc-600">{dayjs(day?.date).format("dddd, D MMM")}</p>
             <p className="py-1">{day?.day?.condition?.text}</p>
-            <img style={{ width: "2.75rem" }} src={day?.day?.condition?.icon} alt="weather" />
+            <img style={{ width: "2.5rem" }} src={day?.day?.condition?.icon} alt="weather" />
             <div className="flex flex-col items-center">
 
               {conversion ? (
@@ -33,7 +33,7 @@ export default function CityDayEntry({ selectedCity }) {
           </Link>
 
           {alerts.length !== 0 &&
-            <div className="flex flex-row flex-1 flex-wrap justify-center mt-2">
+            <div className="flex flex-row flex-1 flex-wrap justify-center">
               {alerts?.map((alert, index) => (
                 dayjs(day?.date).format("dddd, D MMM") === dayjs(alert?.effective).format("dddd, D MMM") &&
                 <CityDayAlert key={index} alert={alert} color='red' />

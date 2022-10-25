@@ -3,7 +3,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 export default function ConfirmModal({ hiddenConfirmation, setHiddenConfirmation, removeCity, selectedCity }) {
 
   return (
-    <div className='absolute top-0 left-0 w-full'>
+    <div className='absolute top-0 left-0 w-full text-xs'>
 
       <div className={hiddenConfirmation ? "hidden" : "absolute z-10 w-full"}>
 
@@ -14,17 +14,17 @@ export default function ConfirmModal({ hiddenConfirmation, setHiddenConfirmation
             <div className="transform bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg rounded-lg">
 
               <div className="flex flex-row justify-center pt-5">
-                <RiDeleteBin5Line style={{ height: "2rem", width: "2rem", color: "#b91c1c" }} />
+                <RiDeleteBin5Line style={{ height: "1.5rem", width: "2rem", color: "#b91c1c" }} />
               </div>
               <div className="flex flex-row justify-center">
-                <p className="text-lg mt-4 font-bold text-gray-600 tracking-wide text-center">Delete confirmation</p>
+                <p className="text-sm mt-4 font-bold text-gray-600 tracking-wide text-center">Delete confirmation</p>
               </div>
               <div className="flex flex-row justify-center">
-                <p className="text-sm my-2 font-bold text-gray-600 tracking-wide text-center">Are you sure you want to remove {selectedCity?.location?.name}?</p>
+                <p className="my-2 font-bold text-gray-600 tracking-wide text-center">Are you sure you want to remove {selectedCity?.location?.name}?</p>
               </div>
 
               <div className="my-3 text-left sm:mt-0 sm:ml-4">
-                <div className="mt-2 text-justify text-sm text-gray-600">
+                <div className="mt-2 text-justify text-gray-600">
 
                 </div>
               </div>

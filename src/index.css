@@ -4,6 +4,12 @@
 
 @layer components {
   .btn-primary {
-    @apply tracking-wider items-center inline-block px-6 py-2 border-2 text-gray-300 border-gray-300/50 hover:border-gray-300/20 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:ring-1 focus:ring-white focus:ring-opacity-10 focus:outline-none transition duration-150 ease-in-out;
+    @apply tracking-wider items-center inline-block px-5 py-2 border-2 text-gray-300 border-gray-300/50 hover:border-gray-300/20 text-xs leading-tight lowercase rounded-full hover:bg-black hover:bg-opacity-5 focus:ring-1 focus:ring-white focus:ring-opacity-10 focus:outline-none transition duration-150 ease-in-out;
   }
+}
+
+.control-dots {
+  border-top: 1px solid transparent;
+  border-image: radial-gradient(circle, #8b8b8d 10%, #8b8b8d14 85%);
+  border-image-slice: 1;
 }
