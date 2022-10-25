@@ -17,7 +17,7 @@ export default function Search() {
   const debouncedSearch = useDebounce(city, 500); // Delayed search 500ms
 
   const [searchData, setSearchData] = useState([]); // Autocomplete state - Array of 10 cities
-  const apiSearchUrl = `http://api.weatherapi.com/v1/search.json?key=${KEY}&q=${debouncedSearch}&days=5&aqi=yes&alerts=yes`;
+  const apiSearchUrl = `https://api.weatherapi.com/v1/search.json?key=${KEY}&q=${debouncedSearch}&days=5&aqi=yes&alerts=yes`;
 
   useEffect(() => {
     const getCity = () => {
