@@ -6,7 +6,8 @@ const KEY = process.env.REACT_APP_API_KEY;
 export default function CurrentCityLink() {
 
   const apiIPUrl = `/ip.json?key=${KEY}&q=auto:ip`;
-  const { data: currentCity, loading, error, handleRefetch } = useFetch(apiIPUrl);
+  const { data: currentCity, loading, error } = useFetch(apiIPUrl);
+  // const { data: currentCity, loading, error, handleRefetch } = useFetch(apiIPUrl);
   const yourLocation = (currentCity?.city)
 
   if (loading) return <LoadingInfo />
@@ -16,6 +17,7 @@ export default function CurrentCityLink() {
 
     <div>
       {/* <div onClick={handleRefetch} className="btn-primary cursor-pointer">Get Current Location</div> */}
+
 
       <CityWeather city={yourLocation} />
     </div>
