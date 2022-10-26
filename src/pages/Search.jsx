@@ -46,7 +46,7 @@ export default function Search() {
   };
 
   return (
-    <div className="h-100h pb-44 flex flex-row justify-center items-end bg-search bg-no-repeat bg-cover bg-center bg-fixed bg-zinc-900/60 text-white/70 text-sm rounded-md">
+    <div className="search">
       <div className="flex max-w-xs w-screen m-2">
         <form action="submit" className="w-full">
 
@@ -68,7 +68,8 @@ export default function Search() {
           )}
 
           <div className="flex flex-row">
-            <input value={city} onChange={(e) => { setCity(e.target.value) }} type="text" placeholder="Search for the city..." className="flex flex-col basis-3/4 btn-primary rounded-none bg-zinc-900/60 hover:bg-zinc-900 capitalize" />
+            <input value={city} onChange={(e) => { setCity(e.target.value) }} type="text" placeholder="Search for the city..."
+              className="flex flex-col basis-3/4 btn-primary rounded-none bg-zinc-900/60 hover:bg-zinc-900 capitalize" />
             <button disabled={disabled} onClick={handleSubmit} className={disabled ? "btn-add hover:cursor-not-allowed" : "btn-add"}>
               Add
             </button>

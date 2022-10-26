@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import DataContext from "../../context/DataContext";
-import useToggle from "../../hooks/useToggle";
 import Tooltip from "../Tooltip";
 import ConfirmModal from "./ConfirmModal";
+import useToggle from "../../hooks/useToggle";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import dayjs from "dayjs";
 
 export default function DaytimeAndDelete({ selectedCity, localtime, text, icon }) {
   const { cities, setCities } = useContext(DataContext);
-  const [hiddenConfirmation, setHiddenConfirmation] = useToggle(true)
+  const [hiddenConfirmationOne, setHiddenConfirmationOne] = useToggle(true)
 
   const removeCity = () => {
     setCities(cities.filter((c) => c !== selectedCity.location.name))
@@ -21,9 +21,9 @@ export default function DaytimeAndDelete({ selectedCity, localtime, text, icon }
       <p className="px-2">{text}</p>
       {icon}
       <Tooltip text="Delete the city">
-        <button onClick={setHiddenConfirmation}><RiDeleteBin5Line style={{ height: "1rem", width: "1rem", color: "darkred" }} /></button>
+        <button onClick={setHiddenConfirmationOne}><RiDeleteBin5Line style={{ height: "1rem", width: "1rem", color: "darkred" }} /></button>
       </Tooltip>
-      <ConfirmModal hiddenConfirmation={hiddenConfirmation} setHiddenConfirmation={setHiddenConfirmation} removeCity={removeCity} selectedCity={selectedCity} />
+      <ConfirmModal hiddenConfirmation={hiddenConfirmationOne} setHiddenConfirmation={setHiddenConfirmationOne} remove={removeCity} text={selectedCity?.location?.name} />
     </div>
   )
 }

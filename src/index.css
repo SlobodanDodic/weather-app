@@ -9,6 +9,12 @@
   .btn-add {
     @apply flex flex-col basis-1/4 ml-2 rounded-none bg-zinc-900/60 hover:cursor-pointer hover:bg-zinc-900 tracking-wider items-center px-5 py-2 border-2 text-gray-300 border-gray-300/50 hover:border-gray-300/20 text-xs leading-tight lowercase focus:ring-1 focus:ring-white focus:ring-opacity-10 focus:outline-none transition duration-150 ease-in-out;
   }
+  .info {
+    @apply max-w-screen-lg mx-auto mt-10 px-8 py-3 text-xs text-gray-300 tracking-wide border-1 border-white/50 bg-zinc-900/90 rounded
+  }
+  .search {
+    @apply h-100h pb-44 flex flex-row justify-center items-end bg-search bg-no-repeat bg-cover bg-center bg-fixed bg-zinc-900/60 text-white/70 text-sm rounded-md
+  }
 }
 
 .control-dots {

@@ -9,10 +9,13 @@ import { Carousel } from 'react-responsive-carousel';
 import Tooltip from "../components/Tooltip";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios";
+import ConfirmModal from "../components/HomePage/ConfirmModal";
+import useToggle from "../hooks/useToggle";
 const KEY = process.env.REACT_APP_API_KEY;
 
 export default function Home() {
   const { cities, setCities } = useContext(DataContext);
+  const [hiddenConfirmationAll, setHiddenConfirmationAll] = useToggle(true)
   const apiIPUrl = `https://api.weatherapi.com/v1/ip.json?key=${KEY}&q=auto:ip`;
 
   const handleClearStorage = () => {
@@ -39,11 +42,12 @@ export default function Home() {
         </Link>
 
         <Tooltip text="Remove all cities">
-          <button onClick={handleClearStorage} className="flex flex-col sm:flex-row btn-primary">
+          <button onClick={setHiddenConfirmationAll} className="flex flex-col sm:flex-row btn-primary">
             Clear all
             <TiArrowBackOutline style={{ width: "1rem", height: "1rem", marginLeft: "5px" }} />
           </button>
         </Tooltip>
+        <ConfirmModal hiddenConfirmation={hiddenConfirmationAll} setHiddenConfirmation={setHiddenConfirmationAll} remove={handleClearStorage} text={"all the cities"} />
       </div>
 
       <div className="max-w-screen-lg mx-auto mt-5">
@@ -54,7 +58,7 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="max-w-screen-lg mx-auto mt-10 px-8 py-3 text-xs text-gray-300 tracking-wide border-1 border-white/50 bg-zinc-900/90 rounded">
+      <div className="info">
         <h1 className="tracking-widest uppercase text-sm">Instructions:</h1>
         <div className="flex flex-wrap my-2">
           <p>If there are alerts, the icon </p>
