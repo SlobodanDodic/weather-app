@@ -1,4 +1,4 @@
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '../../hooks/useToggle';
 import { RiAlertFill } from 'react-icons/ri';
 import { MdStorm } from 'react-icons/md';
 import dayjs from "dayjs";

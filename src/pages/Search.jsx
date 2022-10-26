@@ -68,8 +68,8 @@ export default function Search() {
           )}
 
           <div className="flex flex-row">
-            <input type="text" placeholder="Search for the city..." value={city} onChange={(e) => { setCity(e.target.value) }} className="flex flex-col basis-3/4 btn-primary rounded-none bg-zinc-900/60 hover:bg-zinc-900 capitalize" />
-            <button disabled={disabled} onClick={handleSubmit} className={disabled ? "flex flex-col basis-1/4 btn-primary ml-2 rounded-none bg-zinc-900/60 hover:cursor-not-allowed hover:bg-zinc-900" : "flex flex-col basis-1/4 btn-primary ml-2 rounded-none bg-zinc-900/60 hover:cursor-pointer hover:bg-zinc-900"}>
+            <input value={city} onChange={(e) => { setCity(e.target.value) }} type="text" placeholder="Search for the city..." className="flex flex-col basis-3/4 btn-primary rounded-none bg-zinc-900/60 hover:bg-zinc-900 capitalize" />
+            <button disabled={disabled} onClick={handleSubmit} className={disabled ? "btn-add hover:cursor-not-allowed" : "btn-add"}>
               Add
             </button>
           </div>

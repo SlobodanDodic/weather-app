@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DataContext from "../../../context/DataContext";
+import DataContext from "../../context/DataContext";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import CityDayAlert from "./CityDayAlert";

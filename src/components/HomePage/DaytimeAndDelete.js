@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import DataContext from "../../../context/DataContext";
-import useToggle from "../../../hooks/useToggle";
-import Tooltip from "../../Tooltip";
+import DataContext from "../../context/DataContext";
+import useToggle from "../../hooks/useToggle";
+import Tooltip from "../Tooltip";
 import ConfirmModal from "./ConfirmModal";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import dayjs from "dayjs";
@@ -12,6 +12,7 @@ export default function DaytimeAndDelete({ selectedCity, localtime, text, icon }
 
   const removeCity = () => {
     setCities(cities.filter((c) => c !== selectedCity.location.name))
+    if (cities.length < 3) { window.location.reload() }
   }
 
   return (

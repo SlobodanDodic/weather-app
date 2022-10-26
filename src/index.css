@@ -6,6 +6,9 @@
   .btn-primary {
     @apply tracking-wider items-center inline-block px-5 py-2 border-2 text-gray-300 border-gray-300/50 hover:border-gray-300/20 text-xs leading-tight lowercase rounded-full hover:bg-black hover:bg-opacity-5 focus:ring-1 focus:ring-white focus:ring-opacity-10 focus:outline-none transition duration-150 ease-in-out;
   }
+  .btn-add {
+    @apply flex flex-col basis-1/4 ml-2 rounded-none bg-zinc-900/60 hover:cursor-pointer hover:bg-zinc-900 tracking-wider items-center px-5 py-2 border-2 text-gray-300 border-gray-300/50 hover:border-gray-300/20 text-xs leading-tight lowercase focus:ring-1 focus:ring-white focus:ring-opacity-10 focus:outline-none transition duration-150 ease-in-out;
+  }
 }
 
 .control-dots {

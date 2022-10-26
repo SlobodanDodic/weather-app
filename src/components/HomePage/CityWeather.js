@@ -1,7 +1,7 @@
 import CityDayEntry from "./CityDayEntry";
 import CityDayTitle from "./CityDayTitle";
-import LoadingInfo from "../../LoadingInfo";
-import { useFetch } from "../../../hooks/useFetch";
+import LoadingInfo from "../LoadingInfo";
+import { useFetch } from "../../hooks/useFetch";
 const KEY = process.env.REACT_APP_API_KEY;
 
 export default function CityWeather({ city }) {
