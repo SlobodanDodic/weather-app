@@ -1,6 +1,6 @@
 # Weather App
 
-[Weather app link through Vercel - ](https://weather-app-boban.vercel.app/)
+[Weather App Link](https://weather-app-boban.vercel.app/)
 
 ## Functional implementations:
 
